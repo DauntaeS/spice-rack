@@ -1,0 +1,131 @@
+<div class="row">
+  <div class="col s12 m8">
+    <div class="card white darken-1">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+            <form #spiceForm="ngForm" (ngSubmit)="onSubmit(spiceForm)">
+              <input
+                type="hidden"
+                name="_id"
+                #_id="ngModel"
+                [(ngModel)]="spiceService.selectedSpice._id"
+              />
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    required
+                    placeholder="Cumin"
+                    type="text"
+                    name="name"
+                    #name="ngModel"
+                    [(ngModel)]="spiceService.selectedSpice.name"
+                  />
+                  <label
+                    >Name :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    placeholder="5"
+                    type="text"
+                    name="quantity"
+                    #quantity="ngModel"
+                    [(ngModel)]="spiceService.selectedSpice.qauntity"
+                  />
+                  <label
+                    >Qty :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    placeholder="Fresh"
+                    type="text"
+                    name="amount"
+                    #quantity="ngModel"
+                    [(ngModel)]="spiceService.selectedSpice.amount"
+                  />
+                  <label
+                    >Amount :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    placeholder="spicy..."
+                    type="text"
+                    name="quantity"
+                    #quantity="ngModel"
+                    [(ngModel)]="spiceService.selectedSpice.description"
+                  />
+                  <label
+                    >Description :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    placeholder="02/10/23"
+                    type="text"
+                    name="dateAdded"
+                    #quantity="ngModel"
+                    [(ngModel)]="spiceService.selectedSpice.dateAdded"
+                  />
+                  <label
+                    >Purchase Date :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    placeholder="04/11/26"
+                    type="text"
+                    name="expiration"
+                    #quantity="ngModel"
+                    [(ngModel)]="spiceService.selectedSpice.expDate"
+                  />
+                  <label
+                    >Exp Date :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button
+                    class="waves-effect waves-light btn left"
+                    type="button"
+                    (click)="resetForm(spiceForm)"
+                  >
+                    Reset
+                  </button>
+                  <button
+                    class="btn waves-effect waves-light right"
+                    name="action"
+                    type="submit"
+                  >
+                    Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s7"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
