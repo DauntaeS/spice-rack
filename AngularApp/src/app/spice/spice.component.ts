@@ -17,10 +17,12 @@ export class SpiceComponent implements OnInit {
     this.resetForm();
   }
 
-  onSubmit(spiceForm: any) {
-    // Add form submission logic here
-    console.log('Form submitted!', spiceForm);
-  }
+  // onSubmit(spiceForm: any) {
+  //   this.spiceService.postSpice(form.value).subscribe((res) => {
+  //     this.resetForm(form);
+  //   });
+  //   console.log('Form submitted!', spiceForm);
+  // }
 
   resetForm(form?: NgForm) {
     if (form)
@@ -34,5 +36,11 @@ export class SpiceComponent implements OnInit {
       dateAdded: "",
       expDate: "",
     }
+  }
+
+  onSubmit(form : NgForm){
+    this.spiceService.postSpice(form.value).subscribe((res) => {
+      this.resetForm(form);
+    });
   }
 }

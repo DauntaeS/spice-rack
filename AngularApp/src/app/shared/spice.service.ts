@@ -12,6 +12,12 @@ import { Spice } from './spice.model';
 export class SpiceService {
   selectedSpice: Spice = new Spice;
   spices: Spice[] = [];
+  readonly baseURL = 'http://localhost:3000/spices';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  postSpice(spc : Spice){
+    return this.http.post(this.baseURL, spc);
+  }
+
 }
