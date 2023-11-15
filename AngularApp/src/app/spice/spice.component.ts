@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 
 import { SpiceService } from '../shared/spice.service';
 
+declare let M: any;
+
 @Component({
   selector: 'app-spice',
   templateUrl: './spice.component.html',
@@ -41,6 +43,7 @@ export class SpiceComponent implements OnInit {
   onSubmit(form : NgForm){
     this.spiceService.postSpice(form.value).subscribe((res) => {
       this.resetForm(form);
+      M.toast({ html: 'Saved successfully', classes: 'rounded'});
     });
   }
 }
